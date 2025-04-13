@@ -10,8 +10,8 @@ void Player::Initialize()
 {
 	pos.x = 100.0f;
 	pos.y = 100.0f;
-	rad.x = 25.0f;
-	rad.y = 25.0f;
+	rad.x = 15.0f;
+	rad.y = 15.0f;
 	speed = 2.0f;
 }
 

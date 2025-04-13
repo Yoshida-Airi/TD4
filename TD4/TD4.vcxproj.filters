@@ -112,9 +112,9 @@
     <ClInclude Include="C:\KamataEngine\DirectXGame\2d\ImGuiManager.h">
       <Filter>KamataEngine\Include</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
 </Project>
