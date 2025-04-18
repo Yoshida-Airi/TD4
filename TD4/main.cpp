@@ -1,6 +1,9 @@
 #include <Novice.h>
+#include"Scene/GamePlayScene.h"
 
 const char kWindowTitle[] = "学籍番号";
+
+
 
 // Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
@@ -12,6 +15,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	char keys[256] = {0};
 	char preKeys[256] = {0};
 
+	GamePlayScene* gamePlayScene = new GamePlayScene();
+	gamePlayScene->Initialize();
+
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
 		// フレームの開始
@@ -21,17 +27,24 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		memcpy(preKeys, keys, 256);
 		Novice::GetHitKeyStateAll(keys);
 
+
 		///
 		/// ↓更新処理ここから
 		///
+
+		gamePlayScene->Update();
 
 		///
 		/// ↑更新処理ここまで
 		///
 
+		
+
 		///
 		/// ↓描画処理ここから
 		///
+
+		gamePlayScene->Draw();
 
 		///
 		/// ↑描画処理ここまで
@@ -50,3 +63,4 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	Novice::Finalize();
 	return 0;
 }
+

@@ -14,11 +14,26 @@
     <Filter Include="KamataEngine\Adapter">
       <UniqueIdentifier>{c6468eb4-788b-4a83-b207-a5f4804e56c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="KamataEngine\Object">
+      <UniqueIdentifier>{d8215282-8a75-4f2c-8ead-3807408d0c1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KamataEngine\Object\MapChip">
+      <UniqueIdentifier>{7617ba51-2798-41cd-836f-61deeb9f6265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KamataEngine\Utility">
+      <UniqueIdentifier>{a9c77272-6ae8-4a92-ba68-e416e11846be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="C:\KamataEngine\Adapter\Novice.cpp">
       <Filter>KamataEngine\Adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\MapChip\MapChipField.cpp">
+      <Filter>KamataEngine\Object\MapChip</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\GamePlayScene.cpp">
+      <Filter>KamataEngine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,5 +118,12 @@
     <ClInclude Include="C:\KamataEngine\DirectXGame\2d\ImGuiManager.h">
       <Filter>KamataEngine\Include</Filter>
     </ClInclude>
+    <ClInclude Include="Object\MapChip\MapChipField.h">
+      <Filter>KamataEngine\Object\MapChip</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Vector3.h">
+      <Filter>KamataEngine\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\GamePlayScene.h" />
   </ItemGroup>
 </Project>
