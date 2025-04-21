@@ -2,8 +2,11 @@
 #include <memory>
 #include "Player.h"
 #include "InputHandler.h"
+#include"Scene/GamePlayScene.h"
 
 const char kWindowTitle[] = "TD4";
+
+
 
 // Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
@@ -24,6 +27,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	ICommand* command_ = nullptr;
 	std::unique_ptr<Player> player = std::make_unique<Player>();
 
+	GamePlayScene* gamePlayScene = new GamePlayScene();
+	gamePlayScene->Initialize();
+
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
 		// フレームの開始
@@ -32,6 +38,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		// キー入力を受け取る
 		memcpy(preKeys, keys, 256);
 		Novice::GetHitKeyStateAll(keys);
+
 
 		///
 		/// ↓更新処理ここから
@@ -43,15 +50,21 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			command_->Exec(*player);
 		}
 
+		gamePlayScene->Update();
+
 		///
 		/// ↑更新処理ここまで
 		///
+
+		
 
 		///
 		/// ↓描画処理ここから
 		///
 
 		player->Draw();
+
+		gamePlayScene->Draw();
 
 		///
 		/// ↑描画処理ここまで
@@ -70,3 +83,4 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	Novice::Finalize();
 	return 0;
 }
+
